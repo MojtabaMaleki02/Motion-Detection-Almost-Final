@@ -144,7 +144,7 @@ def press_it():
                         times.append(frame_counter)
                         FTime=datetime.now()
                     break
-
+                FTime=datetime.now()
                 
 
             #Store time values in a Dataframe
@@ -186,5 +186,3 @@ while True:             # Event Loop
         press_it()
     
 window.Close()
-
-
