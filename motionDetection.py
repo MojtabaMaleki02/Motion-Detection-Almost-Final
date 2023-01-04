@@ -14,6 +14,7 @@ from tkinter import filedialog
 import sys
 import PySimpleGUI as sg
 import subprocess
+from datetime import timedelta
 
 layout = [
             [sg.Text("Choose a folder: "),sg.Input(key="-IN2-"),sg.FileBrowse(key="-IN-")],
@@ -164,7 +165,21 @@ def press_it():
             for i in range(0,len(times),2):
                 if len(times)%2==1 and i==len(times)-1:
                     break
-                df = df.append({'Start':RESULT*times[i],'End':RESULT*times[i+1],'Duration':RESULT*(times[i+1]-times[i])}, ignore_index=True)
+
+                #START TIME
+                STARTsec = RESULT*times[i]
+                STARTtd = timedelta(seconds=STARTsec)
+
+                #START TIME
+                ENDsec = RESULT*times[i+1]
+                ENDtd = timedelta(seconds=ENDsec)
+
+                #START TIME
+                DURATIONsec = RESULT*(times[i+1]-times[i])
+                DURATIONtd = timedelta(seconds=DURATIONsec)
+
+
+                df = df.append({'Start':STARTtd,'End':ENDtd,'Duration':DURATIONtd}, ignore_index=True)
                 #df = df.append({'Start':datetime.fromtimestamp((59*(times[i]/DURATION)) / 1e3),'End':datetime.fromtimestamp((59*(times[i+1]/DURATION)) / 1e3),'Duration':datetime.fromtimestamp((59*(times[i+1]/DURATION)) / 1e3)-datetime.fromtimestamp((59*(times[i]/DURATION)) / 1e3)}, ignore_index=True)
 
 
