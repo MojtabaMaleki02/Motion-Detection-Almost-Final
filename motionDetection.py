@@ -16,14 +16,13 @@ import PySimpleGUI as sg
 import subprocess
 
 layout = [
-            [sg.T("")],
-            [sg.Text("Choose a folder: "),sg.Input(key="-IN2-" ,change_submits=True),sg.FileBrowse(key="-IN-")],
+            [sg.Text("Choose a folder: "),sg.Input(key="-IN2-"),sg.FileBrowse(key="-IN-")],
             [sg.Text("Acuraccy", font='Lucida')],
             [sg.Slider(orientation ='horizontal', key='stSlider', range=(100,90000))],
-            [sg.Text("X:      "),sg.Input(key="-IN3-" ,change_submits=True)],
-            [sg.Text("Y:      "),sg.Input(key="-IN4-" ,change_submits=True)],
-            [sg.Text("Height: "),sg.Input(key="-IN5-" ,change_submits=True)],
-            [sg.Text("Width:  "),sg.Input(key="-IN6-" ,change_submits=True)],
+            [sg.Text("X:      "),sg.Input(key="-IN3-" )],
+            [sg.Text("Y:      "),sg.Input(key="-IN4-" )],
+            [sg.Text("Height: "),sg.Input(key="-IN5-" )],
+            [sg.Text("Width:  "),sg.Input(key="-IN6-" )],
             [sg.Button("Submit")]
         ]
 
